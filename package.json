@@ -1,0 +1,15 @@
+{
+  "name": "backend-project",
+  "version": "1.0.0",
+  "description": "a backened project practice with the help of chai and code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backened",
+    "chai"
+  ],
+  "author": "Shubham Srivastava",
+  "license": "ISC"
+}
