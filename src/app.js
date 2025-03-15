@@ -5,8 +5,8 @@ import cors from "cors";
 const app = express()
 
 app.use(cors({  // CORS middleware to allow requests from the frontend 
-    origin: process.env.CORS_ORIGIN,
-    credentials: true
+    origin: process.env.CORS_ORIGIN,  // The origin from which the frontend requests will come 
+    credentials: true   // Allow credentials to be shared between the frontend and the backend 
 }))
 
 app.use(express.json({ limit: "16kb" })) // Body parser middleware to parse JSON body data in requests 

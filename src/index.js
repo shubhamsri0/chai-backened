@@ -1,11 +1,11 @@
 // require('dotenv').config(path: './env'); OR 
-import dotenv from "dotenv";
-dotenv.config({
+import dotenv from "dotenv"; // Import dotenv to read environment variables from the .env file
+dotenv.config({ // Configure dotenv to read environment variables from the .env file in the env directory
     path: "./env"
 })
 import connectDB from "./db/index.js";
 
-connectDB()
+connectDB()  // Connect to the database using the connectDB function imported from the db/index.js file 
 .then(() => {   // If the connection is successful then start the server on the specified port
     app.listen(process.env.PORT || 8000, () => {
         console.log(`Server is running on port: ${process.env.PORT}`);

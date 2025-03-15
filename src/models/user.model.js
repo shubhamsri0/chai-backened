@@ -1,5 +1,5 @@
 import mongoose, {Schema} from "mongoose";
-import bcrypt from "bcryptjs";;
+import bcrypt from "bcryptjs"; // Import bcrypt to hash passwords before saving to the database 
 import jwt from "jsonwebtoken";
 
 const userSchema = new Schema(
@@ -52,14 +52,14 @@ const userSchema = new Schema(
 )
 
 userSchema.pre("save", async function(next) { // pre-save hook to hash password before saving to database 
-    if(!this.isModified("password")) return next();
+    if(!this.isModified("password")) return next(); // if password is not modified then skip this step 
 
-    this.password = await bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10) // hash password with bcrypt and salt of 10 rounds 
     next();
 })
 
 userSchema.methods.isPasswordCorrect = async function(password) { // method to compare password with hashed password in database
-    return await bcrypt.compare(password, this.password)
+    return await bcrypt.compare(password, this.password)  // compare password with hashed password in database 
 }
 
 userSchema.methods.generateAccessToken = function() { // method to generate access token for user 
@@ -78,7 +78,7 @@ userSchema.methods.generateAccessToken = function() { // method to generate acce
 }
 
 userSchema.methods.generateRefreshToken = function() {  // method to generate refresh token for user 
-    return jwt.sign(
+    return jwt.sign(  // sign the user data with refresh token secret and expiry time 
         {
             _id: this._id
         },

@@ -15,7 +15,7 @@ class ApiError extends Error { // extends Error is used to inherit the propertie
         if(statck) { // Check if the stack is provided 
             this.stack = statck 
         } else{
-            Error.captureStackTrace(this, this.constuctor)
+            Error.captureStackTrace(this, this.constuctor) // Capture the stack trace 
         }
     }
 }
