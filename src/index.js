@@ -4,6 +4,7 @@ dotenv.config({ // Configure dotenv to read environment variables from the .env 
     path: "./env"
 })
 import connectDB from "./db/index.js";
+import app from "./app.js";
 
 connectDB()  // Connect to the database using the connectDB function imported from the db/index.js file 
 .then(() => {   // If the connection is successful then start the server on the specified port

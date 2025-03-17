@@ -1,3 +1,4 @@
+// Purpose: Create a function to connect to the database using mongoose and the environment variables from the .env file.
 import mongoose from "mongoose";
 import { DB_NAME } from "../constants.js";
 

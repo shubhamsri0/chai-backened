@@ -1,3 +1,5 @@
+// Code to configure the Express app and add middleware to it
+// Import the express module to create an express app
 import express, { urlencoded } from "express"
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -15,4 +17,10 @@ app.use(express.static("public")) // Serve static files stores in the public dir
 
 app.use(cookieParser()) // Cookie parser middleware to parse cookies in requests
 
-export { app };
+// Router import
+import userRouter from "./routes/user.routes.js";
+
+// Router Declaration
+app.use("api/v1/users", userRouter)  //purpose of this line is to use the userRouter for any requests that start with /api/v1/users
+
+export default app;;

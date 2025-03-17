@@ -1,3 +1,5 @@
+// Purpose: Multer middleware for file upload
+// Import multer to handle file uploads in the application
 import multer from 'multer';
 
 const storage = multer.diskStorage({

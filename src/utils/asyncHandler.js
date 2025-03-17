@@ -1,5 +1,7 @@
+// Export an async handler function that takes a function as an argument and returns a promise that resolves the request handler function
+
 const asyncHandler = (requestHandler) => {  // Define an async handler function that takes a function as an argument by promises
-    (req, res, next) => {
+    return (req, res, next) => {
         Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err))  // Return a promise that resolves the request handler function 
     }
 } 

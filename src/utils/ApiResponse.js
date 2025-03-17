@@ -1,3 +1,4 @@
+// A class to format API response 
 class ApiResponse { // A class to format API response 
     constructor(statusCode, data, message = "Success") {
         this.statusCode = statusCode,
@@ -6,3 +7,5 @@ class ApiResponse { // A class to format API response
         this.success = statusCode < 400
     }
 }
+
+export { ApiResponse }

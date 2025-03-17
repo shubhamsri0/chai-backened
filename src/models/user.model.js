@@ -1,3 +1,8 @@
+// Purpose: Define the user model schema and methods to hash password, compare password, generate access token and refresh token.
+// The user model schema defines the fields for the user collection in the database.
+// The user model schema has a pre-save hook to hash the password before saving it to the database.
+// The user model schema has a method to compare the password with the hashed password in the database.
+
 import mongoose, {Schema} from "mongoose";
 import bcrypt from "bcryptjs"; // Import bcrypt to hash passwords before saving to the database 
 import jwt from "jsonwebtoken";
